@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Lost in the void">
+  <main>
+    <div class="error-container">
+      <span class="code">404</span>
+      <h1>lost in the void</h1>
+      <p>the page you're looking for doesn't exist, or maybe it never did.</p>
+      <a href="/" class="back-link">
+        <span>← back to reality</span>
+      </a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .error-container {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.15;
+    display: block;
+    line-height: 1;
+    margin-bottom: -2rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  p {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--fg);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    transition: all 0.2s ease;
+  }
+
+  .back-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+
+  .code {
+    animation: glitch 3s infinite;
+  }
+</style>
